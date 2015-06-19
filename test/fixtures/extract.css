@@ -1,0 +1,15 @@
+.a {
+    background: white url("img/cup.png") no-repeat 0 0;
+}
+.b {
+    background-image: url("img/cup_missing.png");
+}
+@media print {
+    .a {
+        background: white url("img/cup_edit.png") no-repeat 0 0;
+    }
+    .b {
+        background-image: url("img/cup_edit_missing.png");
+    }
+}
+

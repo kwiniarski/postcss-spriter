@@ -1,0 +1,26 @@
+{
+  "name": "postcss-spriter",
+  "version": "0.0.1",
+  "description": "PostCSS plugin to generate sprite maps",
+  "main": "index.js",
+  "scripts": {
+    "test": "node node_modules/mocha/bin/mocha test/spec"
+  },
+  "keywords": [
+    "postcss-plugin",
+    "sprites"
+  ],
+  "author": "Krzysztof Winiarski",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^2.9.30",
+    "postcss": "^4.1.11",
+    "spritesmith": "^1.3.2"
+  },
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "mocha": "^2.2.5",
+    "sinon": "^1.15.3",
+    "sinon-chai": "^2.8.0"
+  }
+}
