@@ -25,48 +25,13 @@ describe('Extract paths from CSS files', function () {
         var plugin = require('../../lib/plugin')();
 
         fs.readFile(file, { encoding: 'utf8' }, function (err, css) {
-
             var root = postcss.parse(css, { from: file });
-            //plugin(root).then(function(){
-            //    done();
-            //});
-
             postcss([plugin]).process(root).then(function(res){
-                console.log(res);
+                //console.log(res);
                 done();
             });
-
-
-
-
-
         });
 
     });
 
-    //it('spritesmith', function (done) {
-    //    spritesmith({
-    //        src: [
-    //            'C:\\projects\\postcss-spriter\\test\\fixtures\\img\\cup.png',
-    //            'C:\\projects\\postcss-spriter\\test\\fixtures\\img\\cup_edit.png'
-    //        ]
-    //    }, function () {
-    //        console.log(arguments);
-    //        done();
-    //    })
-    //});
-    //
-    //it('spritesmith promise', function (done) {
-    //    var ssp = Promise.promisify(spritesmith);
-    //    ssp({
-    //        src: [
-    //            'C:\\projects\\postcss-spriter\\test\\fixtures\\img\\cup.png',
-    //            'C:\\projects\\postcss-spriter\\test\\fixtures\\img\\cup_edit.png'
-    //        ]
-    //    }).then(function(){
-    //        console.log(arguments);
-    //        done();
-    //    });
-    //
-    //});
 });
