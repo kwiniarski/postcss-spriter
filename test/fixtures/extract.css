@@ -1,8 +1,9 @@
 .a {
     background: white url("img/cup.png") no-repeat 0 0;
+    background-position: 0 0;
 }
 .b {
-    background-image: url("img/cup_missing.png");
+    background-image: url("img/cup.png");
 }
 @media print {
     .a {

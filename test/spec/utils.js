@@ -22,7 +22,8 @@ describe('utils', function () {
 
     describe('#extractImageUrl', function () {
         it('should add resolved absolute image file path to the CSS node object', function () {
-            expect(this.cssDeclarationNode).to.have.property('filePath');
+            expect(this.cssDeclarationNode).to.have.deep.property('file.url', 'img/cup_edit.png');
+            expect(this.cssDeclarationNode).to.have.deep.property('file.path');
         });
     });
 
