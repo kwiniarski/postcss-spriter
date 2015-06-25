@@ -9,6 +9,7 @@ describe('Extract paths from CSS files', function () {
 
         var file = path.resolve(__dirname, '../fixtures/extract.css');
         var plugin = require('../../lib/plugin')({
+            verbose: true,
             spriteMapsDir: __dirname + '/sprites', // where to save sprite maps
             //spriteMapsBaseUrl: '/res/img/sprites', // how to load sprite maps from css
             //spriteMapsBaseUrl: './', // how to load sprite maps from css

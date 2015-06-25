@@ -45,17 +45,6 @@ describe('utils', function () {
         });
     });
 
-    describe('#isBackgroundDecl', function () {
-        it('should return true for background or background-image declarations', function () {
-            expect(utils.isBackgroundDecl('background')).to.be.true;
-            expect(utils.isBackgroundDecl('background-image')).to.be.true;
-        });
-        it('should return false for other background declarations', function () {
-            expect(utils.isBackgroundDecl('background-position')).to.be.false;
-            expect(utils.isBackgroundDecl('background-repeat')).to.be.false;
-        });
-    });
-
     describe('#resolvePathToUrl', function () {
         it('should change CSS URL to absolute URL when basePath is absolute', function () {
             expect(utils.resolvePathToUrl('main1.png', 'http://cdn.com/path'))
@@ -76,6 +65,17 @@ describe('utils', function () {
                 .to.match(/^generated(\/|\\)main\d+\.png/i); // generated/main4.png
         });
         it('should transform CSS URL according to function if passed as baseUrl');
+    });
+
+    describe('#parseBackgroundDecl', function () {
+        it('should extract values form background* CSS declarations', function () {
+            var extract = utils.parseBackgroundDeclaration('white url("image.png") no-repeat 0 center');
+            expect(extract).to.have.property('position', '0 center');
+            expect(extract).to.have.property('repeat', 'no-repeat');
+            expect(extract).to.have.property('url', 'url("image.png")');
+            expect(extract).to.have.property('value', 'white');
+
+        })
     });
 
 });
